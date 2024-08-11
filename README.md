@@ -39,7 +39,7 @@ The Superhero API is a Ktor-based web application designed to manage a collectio
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/superhero-api.git
+   git clone https://github.com/prashant17d97/superhero-api.git
    cd superhero-api
    ```
 
