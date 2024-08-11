@@ -39,5 +39,6 @@ dependencies {
     implementation(libs.default.headers)
     testImplementation(libs.server.tests)
     implementation(libs.koin.ktor)
+    implementation(libs.slf4j)
 
 }
