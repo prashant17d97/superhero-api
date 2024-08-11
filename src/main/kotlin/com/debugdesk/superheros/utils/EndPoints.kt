@@ -32,7 +32,7 @@ import com.debugdesk.superheros.utils.EndPoints.QueryParams.ID
 object EndPoints {
 
     const val SUPER_HERO = "/superheros"
-    const val HOME = "/heros"
+    const val HOME = "/"
     const val REFRESH = "$SUPER_HERO/refresh"
     const val SEARCH = "$SUPER_HERO/search"
     const val DELETE = "$SUPER_HERO/delete"
