@@ -16,7 +16,8 @@ import io.ktor.server.netty.*
  * @see io.ktor.server.netty.EngineMain
  */
 fun main() {
-    embeddedServer(Netty, port = 8080) {
+    val port = System.getenv("PORT")?.toInt() ?: 8080
+    embeddedServer(Netty, port = port) {
         module()
     }.start(wait = true)
 }
