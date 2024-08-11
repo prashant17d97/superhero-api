@@ -15,7 +15,7 @@ application {
 }
 
 tasks {
-    create("stage").dependsOn("installDist")
+    create("stage").dependsOn("installDist --warning-mode all")
 }
 
 repositories {
