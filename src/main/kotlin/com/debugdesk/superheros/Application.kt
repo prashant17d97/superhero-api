@@ -2,6 +2,8 @@ package com.debugdesk.superheros
 
 import com.debugdesk.superheros.plugins.*
 import io.ktor.server.application.*
+import io.ktor.server.engine.*
+import io.ktor.server.netty.*
 
 /**
  * Entry point for the Ktor server application.
@@ -13,8 +15,10 @@ import io.ktor.server.application.*
  * @param args Command-line arguments passed to the application.
  * @see io.ktor.server.netty.EngineMain
  */
-fun main(args: Array<String>) {
-    io.ktor.server.netty.EngineMain.main(args)
+fun main() {
+    embeddedServer(Netty, port = 8080) {
+        module()
+    }.start(wait = true)
 }
 
 /**
@@ -40,7 +44,6 @@ fun main(args: Array<String>) {
  * @see configureSerialization
  * @see configureRouting
  */
-@Suppress("unused")
 fun Application.module() {
     configureKoin()
     configureDefaultHeader()
