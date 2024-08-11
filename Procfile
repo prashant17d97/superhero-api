@@ -1,0 +1,1 @@
+web: ./build/install/com.debugdesk.superheros/bin/com.debugdesk.superheros
