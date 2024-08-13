@@ -6,9 +6,11 @@ RUN gradle shadowJar --no-daemon
 
 # Final stage
 FROM openjdk:11
-EXPOSE 8080  # Expose the port on which Ktor will run
+# Expose port 8080 (the port Ktor will run on)
+EXPOSE 8080
 RUN mkdir /app
+# Copy the fat JAR file from the build stage to /app directory
 COPY --from=build /home/gradle/src/build/libs/superheros-api-all.jar /app/superheros-api-all.jar
-COPY --from=build /home/gradle/src/src/main/resources/application.conf /app/application.conf
 WORKDIR /app
+# Set the command to run the JAR file
 ENTRYPOINT ["java", "-jar", "superheros-api-all.jar"]
