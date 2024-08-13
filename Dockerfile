@@ -1,11 +1,10 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:11-jre-slim
+FROM gradle:7-jdk11 AS build
+COPY --chown=gradle:gradle . /home/gradle/src
+WORKDIR /home/gradle/src
+RUN gradle buildFatJar --no-daemon
 
-# Set the working directory
-WORKDIR /app
-
-# Copy the fat JAR into the container
-COPY build/libs/superheros-api-all.jar /app/superheros-api-all.jar
-
-# Set the command to run your application
-CMD ["java", "-jar", "superheros-api-all.jar"]
+FROM openjdk:11
+EXPOSE 8080:8080
+RUN mkdir /app
+COPY --from=build /home/gradle/src/build/libs/*.jar superheros-api-all.jar
+ENTRYPOINT ["java","-jar","superheros-api-all.jar"]
