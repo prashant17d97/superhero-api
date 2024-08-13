@@ -14,3 +14,4 @@ COPY --from=build /home/gradle/src/build/libs/superheros-api-all.jar /app/superh
 WORKDIR /app
 # Set the command to run the JAR file
 ENTRYPOINT ["java", "-jar", "superheros-api-all.jar"]
+RUN ./gradlew run
