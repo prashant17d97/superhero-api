@@ -3,6 +3,7 @@ koin-version = "3.5.0"
 kotlin-version = "2.0.10"
 ktor-version = "2.3.12"
 logback-version = "1.4.14"
+shadow = "7.0.0"   # Version for the Shadow plugin
 
 [libraries]
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor-version" }
@@ -16,14 +17,14 @@ call-logging = { module = "io.ktor:ktor-server-call-logging", version.ref = "kto
 status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor-version" }
 client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-version" }
 default-headers = { module = "io.ktor:ktor-server-default-headers", version.ref = "ktor-version" }
-
 server-tests = { module = "io.ktor:ktor-server-tests", version.ref = "ktor-version" }
 koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin-version" }
 slf4j = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin-version" }
-
 kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin-version" }
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin-version" }
 ktor = { id = "io.ktor.plugin", version.ref = "ktor-version" }
 serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-version" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
+

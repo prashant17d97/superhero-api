@@ -2,7 +2,6 @@ package com.debugdesk.superheros
 
 import com.debugdesk.superheros.plugins.*
 import io.ktor.server.application.*
-import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 
 /**
@@ -15,12 +14,9 @@ import io.ktor.server.netty.*
  * @param args Command-line arguments passed to the application.
  * @see io.ktor.server.netty.EngineMain
  */
-fun main() {
-    val port = System.getenv("PORT")?.toInt() ?: 8080
-    embeddedServer(Netty, port = port) {
-        module()
-    }.start(wait = true)
-}
+
+fun main(args: Array<String>): Unit = EngineMain.main(args)
+
 
 /**
  * Configures the Ktor application module.

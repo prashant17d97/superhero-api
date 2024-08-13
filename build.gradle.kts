@@ -2,13 +2,14 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
     alias(libs.plugins.serialization)
+    alias(libs.plugins.shadow) // Reference the Shadow plugin from the version catalog
 }
 
 group = "com.debugdesk.superheros"
 version = "0.0.1"
 
 application {
-    mainClass.set("io.ktor.server.netty.EngineMain")
+    mainClass.set("com.debugdesk.superheros.ApplicationKt") // Set the correct main class
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -16,6 +17,10 @@ application {
 
 tasks {
     create("stage").dependsOn("installDist")
+
+    shadowJar {
+        archiveFileName.set("superheros-api-all.jar") // Create a fat JAR
+    }
 }
 
 repositories {
@@ -39,5 +44,4 @@ dependencies {
     testImplementation(libs.server.tests)
     implementation(libs.koin.ktor)
     implementation(libs.slf4j)
-
 }
