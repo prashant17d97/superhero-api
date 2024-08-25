@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  ktor-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Map port 8080 inside the container to port 8080 on the host
+    volumes:
+      - .:/app # Mount the current directory to /app in the container
+    restart: unless-stopped
