@@ -231,7 +231,3 @@ object HeroUtil {
 
 - **Name**: Prashant Singh
 - **Date**: 11 Aug 2024
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
