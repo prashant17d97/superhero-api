@@ -1,3 +1,4 @@
+# Build stage
 FROM ubuntu:latest AS build
 
 RUN apt-get update
@@ -6,10 +7,15 @@ COPY . .
 
 RUN ./gradlew shadowJar --no-daemon
 
+# Runtime stage
 FROM openjdk:17-jdk-slim
 
 EXPOSE 8080
 
-COPY --from=build /build/libs/superheros-api-all.jar app.jar
+# Copy the built JAR from the build stage
+COPY --from=build /build/libs/superheros-api-all.jar /app.jar
 
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Environment variable for PORT
+ENV PORT=8080
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]
