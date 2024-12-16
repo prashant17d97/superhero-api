@@ -1,6 +1,6 @@
 [versions]
 koin-version = "3.5.0"
-kotlin-version = "2.0.10"
+kotlin-version = "2.1.0"
 ktor-version = "2.3.12"
 logback-version = "1.4.14"
 shadow = "7.0.0"   # Version for the Shadow plugin
