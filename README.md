@@ -284,7 +284,7 @@ object HeroUtil {
 
 Contributions are welcome! If you have suggestions, improvements, or bug fixes, feel free to reach out or submit a pull request.
 
-- **LinkedIn**: [Prashant Singh](https://linkedin.com/in/prashant17d97)
+- **LinkedIn**: [Prashant Singh](https://www.linkedin.com/in/prashantsingh-dev/)
 - **Contact Email**: [prashantsinghsca@gmail.com](mailto:prashantsinghsca@gmail.com)
 
 ---
